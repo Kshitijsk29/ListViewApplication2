@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_home_bg"
+    tools:context=".UserHomeActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rohit_sharma"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <TextView
+        android:id="@+id/profileHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Profile"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        android:layout_marginTop="15dp"
+        android:textSize="30sp"/>
+
+
+   <LinearLayout
+       android:id="@+id/mainLinearL"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginTop="20dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/profileHeading">
+
+       <LinearLayout
+           android:id="@+id/llOne"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_margin="10dp"
+           android:gravity="center"
+           android:padding="10dp"
+           >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Name :"
+               android:textSize="25sp"
+               android:textStyle="bold" />
+           <TextView
+               android:id="@+id/tvName"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text=" Kshitij Raypale"
+               android:textSize="25sp"
+               android:layout_marginStart="10dp"
+               android:textStyle="normal" />
+       </LinearLayout>
+       <LinearLayout
+           android:id="@+id/llTwo"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_margin="10dp"
+           android:gravity="center"
+           android:padding="10dp"
+         >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Contact :"
+               android:textSize="25sp"
+               android:textStyle="bold" />
+           <TextView
+               android:id="@+id/tvContact"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="9874563210"
+               android:textSize="25sp"
+               android:layout_marginStart="10dp"
+               android:textStyle="normal" />
+       </LinearLayout>
+       <LinearLayout
+           android:id="@+id/llThree"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_margin="10dp"
+           android:gravity="center"
+           android:padding="10dp"
+           >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Location :"
+               android:textSize="25sp"
+               android:textStyle="bold" />
+           <TextView
+               android:id="@+id/tvLocation"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Chandrapur"
+               android:textSize="25sp"
+               android:layout_marginStart="10dp"
+               android:textStyle="normal" />
+       </LinearLayout>
+   </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btnGoBack"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainLinearL"
+        android:text="go back"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:background="#1897E3"
+        android:layout_marginTop="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

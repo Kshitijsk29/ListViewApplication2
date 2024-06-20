@@ -1,6 +1,9 @@
 package com.nextin.listviewapplication2
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -62,6 +65,16 @@ class MainActivity : AppCompatActivity() {
 
         )
 
+        val contact = arrayOf(
+            "97456321470","9632587410","97456321470","7854123690","3569821470",
+            "97456321470","97456321470","7854123690","3569821470","8523697410"
+        )
+
+        val location = arrayOf(
+            "Chandrapur", "Hyderabad", "Chandrapur", "Gadchiroli", "Pune",
+            "Chandrapur", "Mumbai",
+            "Chandrapur", "MUl","Chandrapur",
+        )
         arrayList= ArrayList()
 
         for (index in name.indices){
@@ -69,7 +82,22 @@ class MainActivity : AppCompatActivity() {
                 profileImage[index])
             arrayList.add(user)
         }
-
         binding.listView.adapter = MyAdpater(this,arrayList)
+
+        binding.listView.setOnItemClickListener { parent, view, position, id ->
+
+            val userName = name[position]
+            val address = location[position]
+            val phone = contact[position]
+            val imageId = profileImage[position]
+
+            val intent = Intent(this,UserHomeActivity::class.java)
+            intent.putExtra("name",userName)
+            intent.putExtra("address",address)
+            intent.putExtra("contact",phone)
+            intent.putExtra("image",imageId)
+            startActivity(intent)
+
+        }
     }
 }

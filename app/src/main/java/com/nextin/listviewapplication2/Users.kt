@@ -6,3 +6,4 @@ data class Users(
     val lastMsgTime :String,
     val profileImage :Int
 )
+
